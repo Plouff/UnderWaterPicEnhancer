@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QString>
+
+#include "histogramcalculator.h"
 
 namespace Ui {
 class MainWindow;
@@ -17,6 +20,11 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+protected:
+    QString picPathStr;
+    HistogramCalculator histCalc;
+    cv::Mat currentPicMat;
 };
 
 #endif // MAINWINDOW_H
