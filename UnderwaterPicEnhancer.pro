@@ -47,10 +47,14 @@ LIBS += -lopencv_core300 \
 # PROJECT SRC ####################################
 ##################################################
 
-SOURCES += main.cpp\
-        mainwindow.cpp
+SOURCES += \
+    main.cpp \
+    mainwindow.cpp \
+    picturedata.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += \
+    mainwindow.h \
+    picturedata.h
 
 FORMS    += mainwindow.ui
 

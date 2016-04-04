@@ -32,10 +32,8 @@
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
-      <widget class="GLPicViewerWithCommands" name="glView" native="true"/>
-      <widget class="PicHistogramManager" name="hists" native="true">
-       <zorder>glView</zorder>
-      </widget>
+      <widget class="GLPicViewerWithCommands" name="glViewer" native="true"/>
+      <widget class="PicHistogramManager" name="histsViewer" native="true"/>
      </widget>
     </item>
    </layout>
@@ -55,7 +53,7 @@
      <x>0</x>
      <y>0</y>
      <width>975</width>
-     <height>18</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
