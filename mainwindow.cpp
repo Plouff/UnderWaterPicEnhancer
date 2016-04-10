@@ -40,16 +40,17 @@ void MainWindow::open()
 {
     // Get path to picture
     QString picPathStr;
+    PictureData * oldPic = pic;
 
     picPathStr = QFileDialog::getOpenFileName(this,
         tr("Open Image"), "D:/temp/",
         tr("Image Files (*.jpg *.jpeg *.tiff *.bmp);;All files (*.*)"));
 
-    if (pic)
-    {
-        delete pic;
-    }
     pic = new PictureData(this, picPathStr);
+    if (oldPic)
+    {
+        delete oldPic;
+    }
 
     updatePicInUse();
 }
@@ -70,7 +71,7 @@ void MainWindow::updatePicInUse()
     ui->histsViewer->setHist(&pic->histGraphs);
 
     // Init OpenGL view
-    ui->glViewer->setPixmapWithPath(pic->getPicPathStr());
+    ui->glViewer->setPixmap(&pic->pixmapInitial);
 }
 
 void MainWindow::createMenus()
